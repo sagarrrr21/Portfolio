@@ -44,8 +44,6 @@ Portfolio/
 │── index.html
 │── style.css
 │── README.md
-└── screenshots/
-    └── portfolio.png
 ```
 
 ---
