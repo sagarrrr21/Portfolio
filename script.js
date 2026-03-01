@@ -1,64 +1,55 @@
 // Hobby Interaction
 
-// select ordered list
-const list = document.querySelector("#home ol");
+const list = document.querySelector("#hobby ol");
 
-// create input
-const hobbyInput = document.createElement("input");
-hobbyInput.placeholder = "Enter new hobby benefit";
+const input = document.createElement("input");
+input.placeholder = "Add new hobby benefit";
 
-// create button
-const addButton = document.createElement("button");
-addButton.textContent = "Add";
+const btn = document.createElement("button");
+btn.textContent = "Add";
 
-// add elements below list
-list.after(hobbyInput);
-hobbyInput.after(addButton);
+list.after(input);
+input.after(btn);
 
-// function to create delete button
-function createDelete(li) {
+function addDelete(li) {
   const del = document.createElement("button");
   del.textContent = "Delete";
   del.style.marginLeft = "8px";
 
   del.onclick = () => li.remove();
-
   li.appendChild(del);
 }
 
-// add delete button to existing items
-document.querySelectorAll("#home ol li").forEach((li) => createDelete(li));
+document.querySelectorAll("#hobby li").forEach((li) => addDelete(li));
 
-// add new item
-addButton.addEventListener("click", () => {
-  if (hobbyInput.value.trim() === "") return;
+btn.addEventListener("click", () => {
+  if (input.value.trim() === "") return;
 
   const li = document.createElement("li");
-  li.textContent = hobbyInput.value;
+  li.textContent = input.value;
 
-  createDelete(li);
+  addDelete(li);
   list.appendChild(li);
 
-  hobbyInput.value = "";
+  input.value = "";
 });
 
-//  Contact Form Alert
+//Contact Form 
 
-const contactForm = document.querySelector("#contact form");
+const form = document.querySelector("#contact form");
 
-contactForm.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   alert("Form submitted successfully!");
 });
 
-// Dynamic Footer Time
+// Dynamic Footer
 
 const footer = document.querySelector("footer");
-const timeText = document.createElement("p");
+const time = document.createElement("p");
+footer.appendChild(time);
 
-footer.appendChild(timeText);
-
-function showTime() {
+function updateTime() {
   const now = new Date();
 
   const date = now.toLocaleDateString("en-IN", {
@@ -68,10 +59,10 @@ function showTime() {
     year: "numeric",
   });
 
-  const time = now.toLocaleTimeString("en-IN");
+  const clock = now.toLocaleTimeString("en-IN");
 
-  timeText.textContent = `${date}, ${time}`;
+  time.textContent = `${date}, ${clock}`;
 }
 
-showTime();
-setInterval(showTime, 1000);
+updateTime();
+setInterval(updateTime, 1000);
