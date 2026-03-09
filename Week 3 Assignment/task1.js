@@ -12,4 +12,4 @@ for (let num of arr) {
   }
 }
 
-console.log("Second Largest:", secondLargest);
+console.log("Second Largest Element :", secondLargest);
