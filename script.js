@@ -1,6 +1,6 @@
 // Hobby Interaction
 
-const list = document.querySelector("#hobby ol");
+const list = document.querySelector("#hobby-list");
 
 const input = document.createElement("input");
 input.placeholder = "Add new hobby benefit";
@@ -13,41 +13,44 @@ input.after(btn);
 
 function addDelete(li) {
   const del = document.createElement("button");
+
   del.textContent = "Delete";
   del.style.marginLeft = "8px";
 
   del.onclick = () => li.remove();
+
   li.appendChild(del);
 }
 
-document.querySelectorAll("#hobby li").forEach((li) => addDelete(li));
+document.querySelectorAll("#hobby-list li").forEach((li) => addDelete(li));
 
 btn.addEventListener("click", () => {
   if (input.value.trim() === "") return;
 
   const li = document.createElement("li");
+
   li.textContent = input.value;
 
   addDelete(li);
+
   list.appendChild(li);
 
   input.value = "";
 });
 
-//Contact Form 
+// Contact Form
 
 const form = document.querySelector("#contact form");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   alert("Form submitted successfully!");
 });
 
-// Dynamic Footer
+// Dynamic Footer Date & Time
 
-const footer = document.querySelector("footer");
-const time = document.createElement("p");
-footer.appendChild(time);
+const time = document.querySelector("#time");
 
 function updateTime() {
   const now = new Date();
@@ -65,4 +68,5 @@ function updateTime() {
 }
 
 updateTime();
+
 setInterval(updateTime, 1000);

@@ -2,32 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Sagar Chauhan | Portfolio</title>
 
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <!-- Header Section -->
     <header>
       <h1>Sagar Chauhan</h1>
       <p>Aspiring Software Development Engineer | Full Stack Developer</p>
     </header>
 
+    <!-- Navigation -->
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
 
+    <!-- Home Section -->
     <section id="home" class="container">
       <h2>Experience</h2>
 
@@ -44,22 +55,22 @@
           Collaborated on building scalable and efficient software solutions
         </li>
       </ol>
-    </section>
-    <section id="hobby" class="container">
-      <h2>My Hobbies</h2>
+
+      <!-- Hobby Subsection -->
+      <h3>My Hobbies</h3>
 
       <p>
         I enjoy activities that improve creativity and problem-solving skills.
-        Below are some benefits of my hobbies.
       </p>
 
-      <ol>
+      <ol id="hobby-list">
         <li>Improves logical thinking</li>
         <li>Enhances creativity</li>
         <li>Helps maintain focus and discipline</li>
       </ol>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="container">
       <h2>About Me</h2>
 
@@ -72,6 +83,7 @@
       </p>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="container">
       <h2>Projects</h2>
 
@@ -83,23 +95,27 @@
             based on user requirements.
           </p>
           <a
-            href="https://github.com/sagarrrr21/intelligent-website-genrator"
+            href="https://github.com/sagarrrr21/intelligent-website-genrrator"
             target="_blank"
-            >View Project</a
+            rel="noopener noreferrer"
           >
+            View Project
+          </a>
         </div>
 
         <div class="project-card">
           <h3>Graph Algorithms Visualizer</h3>
           <p>
             A visualization tool that demonstrates graph algorithms and finds
-            the shortest path between source and destination nodes.
+            the shortest path between nodes.
           </p>
           <a
             href="https://github.com/sagarrrr21/Path-Finding-Visualizer"
             target="_blank"
-            >View Project</a
+            rel="noopener noreferrer"
           >
+            View Project
+          </a>
         </div>
 
         <div class="project-card">
@@ -108,37 +124,51 @@
             A platform that simplifies application deployment with
             authentication and deployment management features.
           </p>
-          <a href="https://github.com/sagarrrr21/Scalara" target="_blank"
-            >View Project</a
+          <a
+            href="https://github.com/sagarrrr21/Scalara"
+            target="_blank"
+            rel="noopener noreferrer"
           >
+            View Project
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="container">
       <h2>Contact Me</h2>
 
       <form>
         <input type="text" name="name" placeholder="Your Name" required />
+
         <input type="email" name="email" placeholder="Your Email" required />
+
         <textarea
           name="message"
-          placeholder="Your Message"
           rows="5"
+          placeholder="Your Message"
           required
         ></textarea>
+
         <button type="submit">Submit</button>
       </form>
     </section>
 
+    <!-- Footer -->
     <footer>
       <p>Connect with me:</p>
+
       <a href="https://www.linkedin.com/in/sagarrrr21/" target="_blank"
         >LinkedIn</a
       >
       |
       <a href="https://github.com/sagarrrr21" target="_blank">GitHub</a>
+
+      <p id="time"></p>
     </footer>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>

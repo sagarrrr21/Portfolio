@@ -1,3 +1,5 @@
+/* General Page Styling */
+
 body {
   margin: 0;
   font-family: "Outfit", sans-serif;
@@ -5,11 +7,15 @@ body {
   color: #363636;
 }
 
+/* Main container */
+
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 40px 20px;
 }
+
+/* Header */
 
 header {
   background: #0f172a;
@@ -18,12 +24,20 @@ header {
   padding: 30px;
 }
 
+/* Navigation */
+
 nav {
   background: #1e293b;
+  padding: 15px;
+}
+
+nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
   gap: 25px;
-  padding: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -35,12 +49,16 @@ nav a:hover {
   color: #54c2f1;
 }
 
+/* Project Layout */
+
 .project-grid {
   display: flex;
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* Project Card */
 
 .project-card {
   background: rgb(130, 201, 240);
@@ -49,6 +67,8 @@ nav a:hover {
   width: 280px;
   text-align: center;
 }
+
+/* Contact Form */
 
 form {
   display: flex;
@@ -65,6 +85,8 @@ textarea {
   border: 1px solid #ccc;
 }
 
+/* Buttons */
+
 button {
   padding: 10px;
   background: #2563eb;
@@ -77,6 +99,8 @@ button {
 button:hover {
   background: #1d4ed8;
 }
+
+/* Footer */
 
 footer {
   background: #0f172a;
