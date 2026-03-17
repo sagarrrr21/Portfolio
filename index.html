@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Responsive viewport -->
+    <!-- Responsive Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Sagar Chauhan | Portfolio</title>
@@ -11,7 +11,6 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
@@ -43,43 +42,43 @@
       <h2>Experience</h2>
 
       <p>
-        I gained practical development experience while working with Landmine
-        Soft, where I contributed to software development projects and
-        strengthened my problem-solving and full-stack development skills.
+        I gained practical development experience while working on real-world
+        applications and improving my problem-solving skills.
       </p>
 
       <ol>
-        <li>Worked on web application development and API implementation</li>
-        <li>Applied Data Structures and Algorithms in real-world projects</li>
-        <li>
-          Collaborated on building scalable and efficient software solutions
-        </li>
+        <li>Built web applications and APIs</li>
+        <li>Applied Data Structures & Algorithms</li>
+        <li>Worked on scalable systems</li>
       </ol>
 
-      <!-- Hobby Subsection -->
+      <!-- Hobby Section -->
       <h3>My Hobbies</h3>
-
-      <p>
-        I enjoy activities that improve creativity and problem-solving skills.
-      </p>
+      <p>I enjoy activities that enhance creativity and logical thinking.</p>
 
       <ol id="hobby-list">
         <li>Improves logical thinking</li>
         <li>Enhances creativity</li>
-        <li>Helps maintain focus and discipline</li>
+        <li>Maintains focus and discipline</li>
       </ol>
+
+      <!-- Input + Button aligned properly -->
+      <div class="hobby-input">
+        <input
+          type="text"
+          id="hobby-input"
+          placeholder="Add new hobby benefit"
+        />
+        <button id="add-hobby-btn">Add Benefit</button>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="container">
       <h2>About Me</h2>
-
       <p>
-        I am a passionate Software Development Engineer with strong expertise in
-        Data Structures & Algorithms, Full Stack Development, and System Design.
-        I actively participate in coding contests and enjoy building scalable
-        applications using modern technologies such as React, MongoDB, and
-        Flutter.
+        I am a Software Development Engineer skilled in DSA, Full Stack
+        Development, and System Design.
       </p>
     </section>
 
@@ -90,47 +89,30 @@
       <div class="project-grid">
         <div class="project-card">
           <h3>Intelligent Website Generator</h3>
-          <p>
-            An intelligent website generator that automatically creates websites
-            based on user requirements.
-          </p>
+          <p>Generates websites automatically.</p>
           <a
             href="https://github.com/sagarrrr21/intelligent-website-genrrator"
             target="_blank"
-            rel="noopener noreferrer"
+            >View Project</a
           >
-            View Project
-          </a>
         </div>
 
         <div class="project-card">
           <h3>Graph Algorithms Visualizer</h3>
-          <p>
-            A visualization tool that demonstrates graph algorithms and finds
-            the shortest path between nodes.
-          </p>
+          <p>Visualizes graph algorithms.</p>
           <a
             href="https://github.com/sagarrrr21/Path-Finding-Visualizer"
             target="_blank"
-            rel="noopener noreferrer"
+            >View Project</a
           >
-            View Project
-          </a>
         </div>
 
         <div class="project-card">
-          <h3>Application Deployment App</h3>
-          <p>
-            A platform that simplifies application deployment with
-            authentication and deployment management features.
-          </p>
-          <a
-            href="https://github.com/sagarrrr21/Scalara"
-            target="_blank"
-            rel="noopener noreferrer"
+          <h3>Scalara Deployment App</h3>
+          <p>Application deployment platform.</p>
+          <a href="https://github.com/sagarrrr21/Scalara" target="_blank"
+            >View Project</a
           >
-            View Project
-          </a>
         </div>
       </div>
     </section>
@@ -139,17 +121,21 @@
     <section id="contact" class="container">
       <h2>Contact Me</h2>
 
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required />
+      <form id="contact-form">
+        <!-- Name -->
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" />
+        <span class="error" id="name-error"></span>
 
-        <input type="email" name="email" placeholder="Your Email" required />
+        <!-- Email -->
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" />
+        <span class="error" id="email-error"></span>
 
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          required
-        ></textarea>
+        <!-- Message -->
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+        <span class="error" id="message-error"></span>
 
         <button type="submit">Submit</button>
       </form>
@@ -158,7 +144,6 @@
     <!-- Footer -->
     <footer>
       <p>Connect with me:</p>
-
       <a href="https://www.linkedin.com/in/sagarrrr21/" target="_blank"
         >LinkedIn</a
       >
@@ -168,7 +153,7 @@
       <p id="time"></p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JS -->
     <script src="script.js"></script>
   </body>
 </html>

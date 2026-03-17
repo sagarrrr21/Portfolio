@@ -1,72 +1,78 @@
-// Hobby Interaction
-
+// Hobby Feature
 const list = document.querySelector("#hobby-list");
+const input = document.querySelector("#hobby-input");
+const btn = document.querySelector("#add-hobby-btn");
 
-const input = document.createElement("input");
-input.placeholder = "Add new hobby benefit";
-
-const btn = document.createElement("button");
-btn.textContent = "Add";
-
-list.after(input);
-input.after(btn);
-
-function addDelete(li) {
+function createDeleteButton(li) {
   const del = document.createElement("button");
-
   del.textContent = "Delete";
-  del.style.marginLeft = "8px";
+  del.className = "delete-btn";
+  del.setAttribute("aria-label", "Delete hobby");
 
   del.onclick = () => li.remove();
-
   li.appendChild(del);
 }
 
-document.querySelectorAll("#hobby-list li").forEach((li) => addDelete(li));
+document.querySelectorAll("#hobby-list li").forEach(createDeleteButton);
 
 btn.addEventListener("click", () => {
-  if (input.value.trim() === "") return;
+  const value = input.value.trim();
+  if (!value) return;
 
   const li = document.createElement("li");
+  li.textContent = value;
 
-  li.textContent = input.value;
-
-  addDelete(li);
-
+  createDeleteButton(li);
   list.appendChild(li);
 
   input.value = "";
 });
 
-// Contact Form
-
-const form = document.querySelector("#contact form");
+// Form Validation (Inline)
+const form = document.querySelector("#contact-form");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  alert("Form submitted successfully!");
+  let valid = true;
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  // Clear previous errors
+  document.querySelectorAll(".error").forEach((el) => (el.textContent = ""));
+
+  if (!name) {
+    document.getElementById("name-error").textContent = "Name is required";
+    valid = false;
+  }
+
+  if (!email || !email.includes("@")) {
+    document.getElementById("email-error").textContent = "Valid email required";
+    valid = false;
+  }
+
+  if (!message) {
+    document.getElementById("message-error").textContent =
+      "Message cannot be empty";
+    valid = false;
+  }
+
+  if (valid) {
+    alert("Form submitted successfully!");
+    form.reset();
+  }
 });
 
-// Dynamic Footer Date & Time
-
+// Live Time
 const time = document.querySelector("#time");
 
 function updateTime() {
   const now = new Date();
 
-  const date = now.toLocaleDateString("en-IN", {
-    weekday: "long",
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
-
-  const clock = now.toLocaleTimeString("en-IN");
-
-  time.textContent = `${date}, ${clock}`;
+  time.textContent = now.toLocaleString("en-IN");
 }
 
 updateTime();
-
 setInterval(updateTime, 1000);
