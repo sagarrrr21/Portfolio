@@ -1,4 +1,5 @@
-/* General Styling */
+/* General Page Styling */
+
 body {
   margin: 0;
   font-family: "Outfit", sans-serif;
@@ -6,7 +7,8 @@ body {
   color: #363636;
 }
 
-/* Container */
+/* Main container */
+
 .container {
   max-width: 1000px;
   margin: auto;
@@ -14,6 +16,7 @@ body {
 }
 
 /* Header */
+
 header {
   background: #0f172a;
   color: white;
@@ -22,6 +25,7 @@ header {
 }
 
 /* Navigation */
+
 nav {
   background: #1e293b;
   padding: 15px;
@@ -32,14 +36,81 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
   color: rgb(224, 162, 162);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Projects */
+nav a:hover {
+  color: #54c2f1;
+}
+
+/* Hobby Section Styling */
+
+#hobby-list {
+  margin-bottom: 20px;
+}
+
+#hobby-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hobby-input-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.hobby-input-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.input-button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-button-group input {
+  flex: 1;
+}
+
+/* Delete Button Styling - Moved from inline JS */
+
+.delete-btn {
+  padding: 5px 12px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+.delete-btn:focus {
+  outline: 2px solid #991b1b;
+  outline-offset: 2px;
+}
+
+/* Project Layout */
+
 .project-grid {
   display: flex;
   gap: 20px;
@@ -47,71 +118,148 @@ nav a {
   flex-wrap: wrap;
 }
 
+/* Project Card */
+
 .project-card {
   background: rgb(130, 201, 240);
   padding: 20px;
   border-radius: 10px;
   width: 280px;
   text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Form */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Form Styling */
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 20px;
   max-width: 500px;
   margin: auto;
 }
 
-input,
-textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-/* Error Messages */
-.error {
-  color: red;
-  font-size: 12px;
+.form-group label {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Form Validation Error States */
+
+input.error,
+textarea.error {
+  border-color: #dc2626;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  min-height: 1.25rem;
+  display: block;
 }
 
 /* Buttons */
+
 button {
   padding: 10px;
   background: #2563eb;
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
 button:hover {
   background: #1d4ed8;
 }
 
-/* Hobby Section */
-.hobby-input {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  justify-content: center;
-}
-
-.delete-btn {
-  margin-left: 8px;
-  background: #ef4444;
-}
-
-.delete-btn:hover {
-  background: #dc2626;
+button:focus {
+  outline: 2px solid #1e40af;
+  outline-offset: 2px;
 }
 
 /* Footer */
+
 footer {
   background: #0f172a;
   color: white;
   text-align: center;
   padding: 20px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #38bdf8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #7dd3fc;
+}
+
+#time {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-button-group {
+    flex-direction: column;
+  }
+
+  #hobby-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .delete-btn {
+    align-self: flex-start;
+  }
 }

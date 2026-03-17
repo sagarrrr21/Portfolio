@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Responsive Meta -->
+    <!-- Responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Sagar Chauhan | Portfolio</title>
@@ -11,6 +11,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
@@ -42,43 +43,63 @@
       <h2>Experience</h2>
 
       <p>
-        I gained practical development experience while working on real-world
-        applications and improving my problem-solving skills.
+        I gained practical development experience while working with Landmine
+        Soft, where I contributed to software development projects and
+        strengthened my problem-solving and full-stack development skills.
       </p>
 
       <ol>
-        <li>Built web applications and APIs</li>
-        <li>Applied Data Structures & Algorithms</li>
-        <li>Worked on scalable systems</li>
+        <li>Worked on web application development and API implementation</li>
+        <li>Applied Data Structures and Algorithms in real-world projects</li>
+        <li>
+          Collaborated on building scalable and efficient software solutions
+        </li>
       </ol>
 
-      <!-- Hobby Section -->
+      <!-- Hobby Subsection -->
       <h3>My Hobbies</h3>
-      <p>I enjoy activities that enhance creativity and logical thinking.</p>
 
-      <ol id="hobby-list">
+      <p>
+        I enjoy activities that improve creativity and problem-solving skills.
+      </p>
+
+      <ol id="hobby-list" aria-label="List of hobby benefits">
         <li>Improves logical thinking</li>
         <li>Enhances creativity</li>
-        <li>Maintains focus and discipline</li>
+        <li>Helps maintain focus and discipline</li>
       </ol>
 
-      <!-- Input + Button aligned properly -->
-      <div class="hobby-input">
-        <input
-          type="text"
-          id="hobby-input"
-          placeholder="Add new hobby benefit"
-        />
-        <button id="add-hobby-btn">Add Benefit</button>
+      <!-- Hobby Input Section - Added for Assignment -->
+      <div class="hobby-input-section">
+        <label for="hobby-input">Add new hobby benefit:</label>
+        <div class="input-button-group">
+          <input
+            type="text"
+            id="hobby-input"
+            placeholder="Enter a new benefit"
+            aria-label="New hobby benefit input"
+          />
+          <button
+            type="button"
+            id="add-hobby-btn"
+            aria-label="Add hobby benefit to list"
+          >
+            Add Benefit
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="container">
       <h2>About Me</h2>
+
       <p>
-        I am a Software Development Engineer skilled in DSA, Full Stack
-        Development, and System Design.
+        I am a passionate Software Development Engineer with strong expertise in
+        Data Structures & Algorithms, Full Stack Development, and System Design.
+        I actively participate in coding contests and enjoy building scalable
+        applications using modern technologies such as React, MongoDB, and
+        Flutter.
       </p>
     </section>
 
@@ -89,30 +110,47 @@
       <div class="project-grid">
         <div class="project-card">
           <h3>Intelligent Website Generator</h3>
-          <p>Generates websites automatically.</p>
+          <p>
+            An intelligent website generator that automatically creates websites
+            based on user requirements.
+          </p>
           <a
             href="https://github.com/sagarrrr21/intelligent-website-genrrator"
             target="_blank"
-            >View Project</a
+            rel="noopener noreferrer"
           >
+            View Project
+          </a>
         </div>
 
         <div class="project-card">
           <h3>Graph Algorithms Visualizer</h3>
-          <p>Visualizes graph algorithms.</p>
+          <p>
+            A visualization tool that demonstrates graph algorithms and finds
+            the shortest path between nodes.
+          </p>
           <a
             href="https://github.com/sagarrrr21/Path-Finding-Visualizer"
             target="_blank"
-            >View Project</a
+            rel="noopener noreferrer"
           >
+            View Project
+          </a>
         </div>
 
         <div class="project-card">
-          <h3>Scalara Deployment App</h3>
-          <p>Application deployment platform.</p>
-          <a href="https://github.com/sagarrrr21/Scalara" target="_blank"
-            >View Project</a
+          <h3>Application Deployment App</h3>
+          <p>
+            A platform that simplifies application deployment with
+            authentication and deployment management features.
+          </p>
+          <a
+            href="https://github.com/sagarrrr21/Scalara"
+            target="_blank"
+            rel="noopener noreferrer"
           >
+            View Project
+          </a>
         </div>
       </div>
     </section>
@@ -122,20 +160,44 @@
       <h2>Contact Me</h2>
 
       <form id="contact-form">
-        <!-- Name -->
-        <label for="name">Name</label>
-        <input id="name" type="text" name="name" />
-        <span class="error" id="name-error"></span>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+            aria-required="true"
+          />
+          <span class="error-message" id="name-error"></span>
+        </div>
 
-        <!-- Email -->
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" />
-        <span class="error" id="email-error"></span>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            aria-required="true"
+          />
+          <span class="error-message" id="email-error"></span>
+        </div>
 
-        <!-- Message -->
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5"></textarea>
-        <span class="error" id="message-error"></span>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+            aria-required="true"
+          ></textarea>
+          <span class="error-message" id="message-error"></span>
+        </div>
 
         <button type="submit">Submit</button>
       </form>
@@ -144,16 +206,25 @@
     <!-- Footer -->
     <footer>
       <p>Connect with me:</p>
-      <a href="https://www.linkedin.com/in/sagarrrr21/" target="_blank"
+
+      <a
+        href="https://www.linkedin.com/in/sagarrrr21/"
+        target="_blank"
+        rel="noopener noreferrer"
         >LinkedIn</a
       >
       |
-      <a href="https://github.com/sagarrrr21" target="_blank">GitHub</a>
+      <a
+        href="https://github.com/sagarrrr21"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub</a
+      >
 
-      <p id="time"></p>
+      <p id="time" aria-live="polite"></p>
     </footer>
 
-    <!-- JS -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>
